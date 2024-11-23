@@ -78,6 +78,46 @@ glossary = {
                             'Restores working tree files to their last committed state. This can be \n\t\t'
                             'dangerous.',
 # Working with Remote Repositories 
-    
+    'git remote':           'Checks which remote servers are currently configured. If you\n\t\tcloned a remote server, it should at least show you "origin".\n\n\t\t'
+                            '-v: Prints the URLs for each shortname used to fetch and push to the remote.\n\n\t\t'
+                            '--add <shortname> <url>: adds a new remote repo explicitly.',    
+
+    'git clone':            'Creates a local copy of a GIT repo, including all files and\n\t\t'
+                            'directories, full commit history, branches, and tags, and repo \n\t\t'
+                            'metadata. It checks out the latest commit from the default\n\t\t'
+                            'branch.The cloned repo has a link to the remote repo named \n\t\t'
+                            '"origin" and is used to fetch or push changes.\n\t\t'
+                            'It automatically sets up the local repo to track the remote master.\n\n\t\t'
+                            'Syntax:\n\t\t\t git clone <repo_url> [</path/to/dest_folder>]\n\n\t\t'
+                            '--branch <branch>: Clones the specified branch.\n\t\t'
+                            '--depth <#>: Creates a shallow clone with only the specified\n\t\t\t' 
+                            'number of previous commits.\n\t\t'
+                            '--mirror: Creates a bare clone that mirrors the original repo; for backups',
+
+    'git fetch'             'Pulls all data from the specified remote project that is not\n\t\t'
+                            'on the local machine. If cloning a repo, it automatically \n\t\t'
+                            'creates the remote repo under the name "origin". Fetched repos\n\t\t'
+                            'do not merge the pulled work, that must be done manually.\n\n\t\t'
+                            'Syntax:\n\t\t\tgit fetch <remote_name>',
+
+    'git pull':             'Pulls and merges a remote branch into your current work.',
+
+    'git config':           'Used to configure and customize GIT settings like user \n\t\t'
+                            'information, editor preferences, aliases, and behavior.\n\n\t'
+                            '--system: Setting will apply to all users and is usually located\n\t\t'
+                            'in /etc/gitconfig\n\n\t\t'
+                            '--global: Applies to the user who set it but all their repos.\n\t\t'
+                            'It is located ~/.gitconfig\n\n\t\t'
+                            '--local: Only affects the current repo. It is located within the\n\t\t\t'
+                            '.git/config directory in the repo.\n\n\t\t'
+                            'Common settings: user.name, user.email, core.editor, alias.co\n\t\t'
+                            'Syntax: git config [<config_level>] <config_to_set> <setting> \n\n\t\t'
+                            'Viewing configs:\n\t\t\t'
+                            'git config --list: lists all configs.\n\t\t\t'
+                            'git config user.name: Lists all configs for the specified user',
+
+    'git push':             'Pushes a local repo to a remote repo.\n\n\t\t'
+                            'Syntax:\n\t\t\t'
+                            'git push <remote> <branch>',
 }
 
