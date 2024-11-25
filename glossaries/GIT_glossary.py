@@ -94,7 +94,7 @@ glossary = {
                             'number of previous commits.\n\t\t'
                             '--mirror: Creates a bare clone that mirrors the original repo; for backups',
 
-    'git fetch'             'Pulls all data from the specified remote project that is not\n\t\t'
+    'git fetch':             'Pulls all data from the specified remote project that is not\n\t\t'
                             'on the local machine. If cloning a repo, it automatically \n\t\t'
                             'creates the remote repo under the name "origin". Fetched repos\n\t\t'
                             'do not merge the pulled work, that must be done manually.\n\n\t\t'
@@ -116,8 +116,16 @@ glossary = {
                             'git config --list: lists all configs.\n\t\t\t'
                             'git config user.name: Lists all configs for the specified user',
 
-    'git push':             'Pushes a local repo to a remote repo.\n\n\t\t'
-                            'Syntax:\n\t\t\t'
-                            'git push <remote> <branch>',
+    'git push':             'Uploads local repository changes to a remote repository. \n\t\t'
+                            'It sends committed changes from your local branch to the corresponding \n\t\t'
+                            'remote branch, updating the remote repository with any new commits. \n\t\t'
+                            'Common syntax: \n\t\t'
+                            '   git push <remote> <branch>  \n\t\t'
+                            '-- <remote>: The name of the remote repository (e.g., origin). \n\t\t'
+                            '-- <branch>: The local branch you want to push to the remote. \n\t\t'
+                            'Example: \n\t\t'
+                            '   git push origin main  \n\t\t'
+                            'This pushes the local "main" branch to the "origin" remote repository.',
+
 }
 
