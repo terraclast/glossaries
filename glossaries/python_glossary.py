@@ -1,7 +1,10 @@
 
 glossary = {
 
-        'print(*)':             'Outputs what is in the parenthesis. Strings can be \n\t\tprinted using quotes.',
+        'print(*)':             'Outputs what is in the parenthesis. Strings can be \n\t\t'
+                                'printed using quotes.'
+                                'f-strings: enable embedding variables or expressions\n\t\t\t'
+                                'directly into strings using {<var | expression>} (curley braces)',
 
         'variable':             'Holds a value that can be called later in the program.',
 
