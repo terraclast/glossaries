@@ -378,6 +378,6 @@ glossary = {
     'return':               'Exits a function without executing further commands.',
 
     'exit':                 'Exits the shell script. \n\t\t'
-                            'Syntax: exit <value>.'
+                            'Syntax: exit <value>.',
 }
                              

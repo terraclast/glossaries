@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# A glossary program that calls outsidepython dictionary "databases" and enables searching for 
+# A glossary program that calls external python dictionary "databases" and enables searching for 
 # the key to provide the key's definition and examples. 
 # 
 # Current "Databases"
@@ -95,3 +95,6 @@ while active:
     
     else:
         print(f"{raw_input} is not a currently supported glossary. Please choose again.\n")
+
+
+        

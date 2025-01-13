@@ -1,0 +1,182 @@
+glossary = {
+    "Headings": {
+        "Syntax": "# for H1, ## for H2, ### for H3, and so on up to ###### for H6",
+        "Example": "# This is a heading",
+        "Description": "Used to create headings of different levels. One '#' represents the largest heading (H1)."
+    },
+    "Bold": {
+        "Syntax": "**text** or __text__",
+        "Example": "**Bold Text**",
+        "Description": "Encloses the text in double asterisks or underscores to make it bold."
+    },
+    "Italics": {
+        "Syntax": "*text* or _text_",
+        "Example": "*Italicized Text*",
+        "Description": "Encloses the text in single asterisks or underscores to italicize it."
+    },
+    "Bold and Italics": {
+        "Syntax": "***text*** or ___text___",
+        "Example": "***Bold and Italics***",
+        "Description": "Combines both bold and italic by using triple asterisks or underscores."
+    },
+    "Lists": {
+        "Syntax": {
+            "Unordered": "- Item or * Item",
+            "Ordered": "1. Item",
+        },
+        "Example": {
+            "Unordered": "- First Item\n- Second Item",
+            "Ordered": "1. First Item\n2. Second Item"
+        },
+        "Description": "Creates unordered lists using dashes or asterisks and ordered lists using numbers followed by a period."
+    },
+    "Links": {
+        "Syntax": "[Link Text](URL)",
+        "Example": "[Markdown Guide](https://www.markdownguide.org)",
+        "Description": "Creates a hyperlink with the visible text enclosed in square brackets and the URL in parentheses."
+    },
+    "Images": {
+        "Syntax": "![Alt Text](Image URL)",
+        "Example": "![Sample Image](https://example.com/image.png)",
+        "Description": "Embeds an image. The alt text is displayed if the image cannot be loaded."
+    },
+    "Blockquotes": {
+        "Syntax": "> Quote",
+        "Example": "> This is a blockquote.",
+        "Description": "Creates a blockquote by starting the line with a greater-than sign."
+    },
+    "Code": {
+        "Syntax": {
+            "Inline": "`code`",
+            "Block": "```\ncode block\n```"
+        },
+        "Example": {
+            "Inline": "`Inline Code`",
+            "Block": "```\ndef function():\n    print(\"Hello, World!\")\n```"
+        },
+        "Description": "Inline code is enclosed in backticks (`), and code blocks are enclosed in triple backticks."
+    },
+    "Horizontal Rule": {
+        "Syntax": "--- or *** or ___",
+        "Example": "---",
+        "Description": "Creates a horizontal line by using three dashes, asterisks, or underscores."
+    },
+    "Tables": {
+        "Syntax": "| Header | Header |\n|--------|--------|\n| Cell   | Cell   |",
+        "Example": "| Name  | Age |\n|-------|-----|\n| Alice |  30 |",
+        "Description": "Creates a table using pipes and dashes. The first row is the header."
+    },
+    "Strikethrough": {
+        "Syntax": "~~text~~",
+        "Example": "~~Strikethrough Text~~",
+        "Description": "Encloses the text in double tildes to strike through it."
+    },
+    "Task Lists": {
+        "Syntax": "- [ ] Task 1\n- [x] Completed Task",
+        "Example": "- [ ] Incomplete\n- [x] Complete",
+    },      
+        "Inline HTML": {
+        "Syntax": "<html-element>Content</html-element>",
+        "Example": "<b>Bold text using HTML</b>",
+        "Description": "Allows embedding raw HTML for styling or content that Markdown does not natively support."
+    },
+    "Escaping Special Characters": {
+        "Syntax": "\\special_character",
+        "Example": "\\*not bold*",
+        "Description": "Adds a backslash before special characters to treat them as literal text rather than Markdown syntax."
+    },
+    "Custom IDs for Headings": {
+        "Syntax": "### Heading {#custom-id}",
+        "Example": "### My Section {#section-id}",
+        "Description": "Assigns a custom HTML ID to a heading, useful for linking directly to a section."
+    },
+    "Footnotes": {
+        "Syntax": "Here is a footnote reference[^1]\n\n[^1]: The footnote text.",
+        "Example": "Markdown supports footnotes[^1].\n\n[^1]: This is the footnote.",
+        "Description": "Adds inline footnotes with references."
+    },
+    "Admonitions": {
+        "Syntax": "!!! type \"Title\"\nContent",
+        "Example": "!!! note \"Take Note\"\n    This is an important note.",
+        "Description": "Used to create styled callouts for notes, warnings, tips, etc. (specific to certain Markdown parsers)."
+    },
+    "Definition Lists": {
+        "Syntax": "Term\n: Definition",
+        "Example": "Markdown\n: A lightweight markup language for formatting text.",
+        "Description": "Provides an elegant way to define terms and their descriptions."
+    },
+    "Emoji Shortcodes": {
+        "Syntax": ":emoji-name:",
+        "Example": ":smile:",
+        "Description": "Inserts emojis if supported by the Markdown parser."
+    },
+    "TOC (Table of Contents)": {
+        "Syntax": "[TOC]",
+        "Example": "[TOC]",
+        "Description": "Automatically generates a table of contents based on headings, depending on the Markdown processor."
+    },
+    "Automatic Links": {
+        "Syntax": "<http://example.com>",
+        "Example": "<https://www.google.com>",
+        "Description": "Automatically creates a hyperlink for a valid URL enclosed in angle brackets."
+    },
+    "Hard Line Breaks": {
+        "Syntax": "Add two spaces at the end of a line.  ",
+        "Example": "Line one.  \nLine two.",
+        "Description": "Forces a line break without starting a new paragraph."
+    },
+        "Highlighting": {
+        "Syntax": "==highlighted text==",
+        "Example": "This is ==important==.",
+        "Description": "Adds a highlight effect to the text (supported by some Markdown processors)."
+    },
+    "Superscript": {
+        "Syntax": "x^2^",
+        "Example": "E = mc^2^",
+        "Description": "Formats text as superscript (commonly used in mathematical or scientific content)."
+    },
+    "Subscript": {
+        "Syntax": "H~2~O",
+        "Example": "H~2~O",
+        "Description": "Formats text as subscript."
+    },
+    "Anchor Links": {
+        "Syntax": "[Link text](#anchor-name)",
+        "Example": "[Go to Section](#section-name)",
+        "Description": "Creates an internal link to a heading or section within the same document."
+    },
+    "HTML Comments": {
+        "Syntax": "<!-- This is a comment -->",
+        "Example": "<!-- This won't be visible in the rendered output -->",
+        "Description": "Adds comments that won’t appear in the rendered output but are visible in the source Markdown file."
+    },
+    "Math Blocks (LaTeX)": {
+        "Syntax": "$inline-math$ or $$block-math$$",
+        "Example": "$\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$",
+        "Description": "Allows rendering mathematical equations using LaTeX syntax."
+    },
+    "Task List States": {
+        "Syntax": "- [ ] Task 1\n- [x] Task 2",
+        "Example": "- [ ] Incomplete Task\n- [x] Completed Task",
+        "Description": "Adds checkbox-style task lists, with `[ ]` for incomplete and `[x]` for completed tasks."
+    },
+    "Table Alignment": {
+        "Syntax": "| Left-aligned | Center-aligned | Right-aligned |\n|:-------------|:--------------:|--------------:|\n| Value 1      |     Value 2    |         Value 3 |",
+        "Example": "| Name    | Age | Salary   |\n|:--------|:---:|---------:|\n| Alice   |  30 | $50,000  |\n| Bob     |  25 | $45,000  |",
+        "Description": "Aligns table columns using colons (`:`). `:---` aligns left, `:---:` centers, and `---:` aligns right."
+    },
+    "Line Breaks (Hard and Soft)": {
+        "Syntax": {
+            "Hard": "Add two spaces at the end of a line.  ",
+            "Soft": "A new line without spaces."
+        },
+        "Example": "This is a line.  \nThis is another line.",
+        "Description": "Differentiates between soft and hard line breaks based on spacing at the end of the line."
+    },
+    "Collapsible Sections": {
+        "Syntax": "<details>\n<summary>Click to expand</summary>\nContent inside collapsible section.\n</details>",
+        "Example": "<details>\n<summary>More Information</summary>\nHere is some additional information.\n</details>",
+        "Description": "Creates collapsible sections for content."
+    }
+
+} 

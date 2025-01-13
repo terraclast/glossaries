@@ -93,6 +93,6 @@ glossary = {
                             '[ -T type] [ -U user] [ -w file] [ -E algo:secret] [ expression].',
 
     'telnet/ssh':           'Provides remote access via a terminal interface. \n\t\t'
-                            'Telnet is in clear text, while SSH is encrypted (usually with AES).'
+                            'Telnet is in clear text, while SSH is encrypted (usually with AES).',
 }
 
