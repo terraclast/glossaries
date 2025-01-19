@@ -1,6 +1,18 @@
 import os
 import importlib
 import json
+import py_compile
+from utils.validation import validate_glossary
+
+def is_valid_python_file(file_path):
+    '''
+    Check that a python dictionary is properly formed.
+    '''
+    try:
+        py_compile.compile(file_path, doraise=True)
+        return True
+    except py_compile.PyCompileError:
+        return False
 
 def file_reader(directory="./glossaries", verbose = True):
     '''
@@ -32,6 +44,7 @@ def glossary_importer():
 
     for raw_file_name in glossary_files:
         try: 
+            full_path = os.path.join("./glossaries", raw_file_name)
             # Process glossary filenames
             if raw_file_name.endswith(".py"):
                 # Process python filenames
@@ -45,37 +58,34 @@ def glossary_importer():
                 if glossary is None:
                     print(f"The module, {module_name}, does not contain a 'glossary'.")
                 else:
-                    glossaries[processed_file_name] = glossary
+                    # Validate and process .py glossaries
+                    if not is_valid_python_file(full_path):
+                        print(f"ERROR: Malformed Python glossary '{raw_file_name}', skipping.")
+                        continue
+                    else:
+                        validated_glossary = validate_glossary(processed_file_name, glossary)
+                        if validated_glossary:
+                            glossaries[processed_file_name] = validated_glossary
 
+            # Validate and process .json glossaries
             elif raw_file_name.endswith(".json"):
-                # Process json files
-                full_path = os.path.join("./glossaries", raw_file_name)
+
                 with open(full_path, "r", encoding="utf-8") as f:
                     glossary = json.load(f)
-                    
-                # Validate JSON glossary content
-                validated_glossary = {
-                    term: definition for term, definition in glossary.items()
-                    if isinstance(term, str) and (isinstance(definition, str) or isinstance(definition, dict))
-                }
+
+                validated_glossary = validate_glossary(raw_file_name, glossary)
                 if validated_glossary:
-                    glossaries[raw_file_name[:-5]] = validated_glossary     # Remove ".json"
-                else:
-                    print(f"No valid entries in JSON glossary: {raw_file_name}")
+                    glossaries[raw_file_name.replace('.json', '')] = validated_glossary
 
         except Exception as e:
             # Handle any errors during import
             if raw_file_name.endswith(".py") and raw_file_name != "__init__.py":
-                print(f"Failed to import Python glossary '{module_name}': {e}")
+                print(f"ERROR: Failed to import Python glossary '{module_name}': {e}")
             elif raw_file_name.endswith(".json"):
-                print(f"Failed to process JSON glossary '{raw_file_name}': {e}")
+                print(f"ERROR: Failed to process JSON glossary '{raw_file_name}': {e}")
     
     return glossaries
 
 # Load glossaries
 loaded_glossaries = glossary_importer()
 
-# Display loaded glossaries
-# print("Loaded Glossaries: ")
-# for name in loaded_glossaries.keys():
-#   print(f" - {name}")

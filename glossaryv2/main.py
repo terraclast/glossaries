@@ -1,6 +1,7 @@
 from utils.glossary_loader import glossary_importer 
 from utils.glossary_ops import view_all_terms, view_all_entries, view_entry, search_keyword
 from utils.menu import main_menu, gloss_menu
+from utils.validation import validate_menu_choice
 
 glossaries = glossary_importer()
 ACTION_QUIT = "quit"
@@ -30,22 +31,22 @@ while True:
         search_keyword(glossaries, keyword, scope="all")
 
     else:
-        choice = gloss_menu(glossaries[selected_glossary_name], selected_glossary_name)
-        if choice in range(1, 4):
-            choice = int(choice)
-        match choice:
-            case 1:     # View an entry
-                term = get_cased_input("Enter a term: ")
-                view_entry(glossaries[selected_glossary_name], term)
-            case 2:     # View all terms
-                view_all_terms(glossaries[selected_glossary_name])
-            case 3:     # View the entire glossary
-                view_all_entries(glossaries[selected_glossary_name])
-            case 4:     # Search the current glossary
-                keyword = get_cased_input("Enter a keyword: ")
-                search_keyword(glossaries, keyword, scope="single", single_gloss_name=selected_glossary_name)
-            case "b":   
-                continue    # Return to the main menu
-            case "q":
-                print("Goodbye!")
-                break
+        while True:
+            choice = gloss_menu(glossaries[selected_glossary_name], selected_glossary_name)
+            print(f"DEBUG: Choice returned from gloss_menu: '{choice}'")
+            match choice:
+                case "1":     # View an entry
+                    term = get_cased_input("Enter a term: ")
+                    view_entry(glossaries[selected_glossary_name], term)
+                case "2":     # View all terms
+                    view_all_terms(glossaries[selected_glossary_name])
+                case "3":     # View the entire glossary
+                    view_all_entries(glossaries[selected_glossary_name])
+                case "4":     # Search the current glossary
+                    keyword = get_cased_input("Enter a keyword: ")
+                    search_keyword(glossaries, keyword, scope="single", single_gloss_name=selected_glossary_name)
+                case "b":   
+                    break    # Return to the main menu
+                case "q":
+                    print("Goodbye!")
+                    exit()

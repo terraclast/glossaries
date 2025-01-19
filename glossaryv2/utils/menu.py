@@ -5,10 +5,39 @@ import importlib
 import json
 
 glossaries = glossary_importer()
+
+
 options = {
-    "main":  {"s", "q"},
+    "main":  set(),  # Dynamic options generated at runtime
     "gloss":  {"1", "2", "3", "4", "b", "q"}
 }
+
+def generate_main_menu_options(glossaries):
+    """
+    Generate dynamic main menu options based on available glossaries.
+    :param glossaries: Dictionary of glossaries
+    :return: Set of valid main menu options.
+    """
+    glossary_options = set(map(str, range(1, len(glossaries) + 1)))
+    static_options = {"s", "q"}
+    return glossary_options | static_options
+
+def display_main_menu(glossaries):
+    """
+    Print the main menu with dynamically numbered glossaries
+    """
+    print("Glossaries and options: ")
+    for i, gloss_name in enumerate(glossaries.keys(), start=1):
+        print(f"{i}.) {gloss_name}")
+    print("s.) Search for a keyword or term across all glossaries.")
+    print("q.) Quit the program.")
+
+def display_glossary_menu(glossary_name):
+    """
+    Print the glossary-specific menu.
+    """
+    print(f"\nGlossary: [{glossary_name}]")
+    print("Glossary Options: \n\t1.) View Entry\n\t2.) View All Terms\n\t3.) View Entire Glossary\n\t4.) Keyword Search\n\tb.) Back to Main Menu\n\tq.) Quit Program")
 
 def get_input(prompt): 
     return input(prompt).strip().lower()
@@ -22,17 +51,11 @@ def main_menu(glossaries):
         c. Quit the program
     """
 
-    # Dynamically add the number of currently available glossaries.
-    options["main"].update(map(str, range(1, len(glossaries) + 1)))    
-    
+    options["main"] = generate_main_menu_options(glossaries) # Update dynamic options
+
     while True:
-        # Display the various glossary choices and options.
-        print("Glossaries and options: ")
-        for i, gloss_name in enumerate(glossaries.keys(), start=1):
-            print(f"{i}.) {gloss_name}")
-        print("s.) Search for a keyword or term across all glossaries.")
-        print("q.) Quit the program.")
-        
+        # Generate and display the menu. 
+        display_main_menu(glossaries)
         # Take user input
         choice = get_input("Please select a glossary number, 's' to search and 'q' to quit: ")
         
@@ -48,7 +71,7 @@ def main_menu(glossaries):
                 glossary_index = int(choice) -1
                 return list(glossaries.keys())[glossary_index]
         else: 
-            print("'{choice}' is not a valid choice, please try again.\n")
+           print(f"'{choice}' is not a valid choice, please try again.\n")
         
 
 
@@ -65,9 +88,7 @@ def gloss_menu(glossary, glossary_name):
         q. Exit the program
     """
     while True:
-        # Display the various glossary options.
-        print(f"\nGlossary: [{glossary_name}]")
-        print("Glossary Options: \n\t1.) View Entry\n\t2.) View All Terms\n\t3.) View Entire Glossary\n\t4.) Keyword Search\n\tb.) Back to Main Menu\n\tq.) Quit Program")
+        display_glossary_menu(glossary_name)
         choice = get_input("Please make a choice from the above options.")
         if validate_menu_choice(choice, options["gloss"]):
             return choice
@@ -76,6 +97,4 @@ def gloss_menu(glossary, glossary_name):
                 
             
         
-
-
 

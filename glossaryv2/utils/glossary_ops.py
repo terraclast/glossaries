@@ -1,3 +1,17 @@
+def nest_digger(entry, indent=0):
+    """
+    Check for nested dictionaries and print each one recursively. 
+    """
+    if isinstance(entry, str):
+        print("\t\t" + entry)
+    else:    
+        for subkey, definition in entry.items():
+            print(("\t" * indent) + f"{subkey}:")
+            if isinstance(definition, dict):
+                nest_digger(definition, indent + 2)
+            else:
+                print("\t" * (indent + 2) + str(definition))
+
 
 def view_all_terms(glossary):
     """
@@ -12,6 +26,7 @@ def view_all_terms(glossary):
     print('Terms in this glossary: ')
     for term in terms:
         print(f" - {term}")
+
 
 def view_all_entries(glossary):
     """
@@ -33,9 +48,10 @@ def view_all_entries(glossary):
                 # handle flat data
                 print(f"    {data}")
 
+
 def view_entry(glossary, term):
     """
-    Display the requested term and its associated deffinition.
+    Display the requested term and its associated definition.
     """
     if not glossary:
         print("The requested glossary is empty.")
@@ -43,17 +59,11 @@ def view_entry(glossary, term):
 
     data = glossary.get(term)
     if data:
-        print(f"{term}")
-        if isinstance(data, dict):
-            #   handle nested data
-            for key, value in data.items():
-                print(f"    {key}: {value}")
-        else:
-            # Handle flat data
-            print(f":    {data}")
-
+        print(f"\n\n{term}:")
+        nest_digger(data)
     else:
         print(f"The requested term, {term}, does not currently exist in the glossary.")
+
 
 def search_keyword(glossaries, keyword, scope="all", single_gloss_name=None):
     """

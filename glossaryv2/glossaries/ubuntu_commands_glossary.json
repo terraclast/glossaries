@@ -1,0 +1,447 @@
+{
+    "open terminal window hotkey": {
+        "description": "ctrl+alt+t, Assumes the shell is Bash."
+    },
+    "ls /boot | grep vmlinuz-": {
+        "description": "Prints all available kernels that are available on the box."
+    },
+    "lsof": {
+        "description": "Lists open files."
+    },
+    "uname": {
+        "description": "Prints system information.",
+        "options": {
+            "-a": "Prints all information.",
+            "-s": "Prints kernel info.",
+            "-n": "Prints the network node hostname.",
+            "-r": "Prints the kernel release.",
+            "-v": "Prints the kernel version.",
+            "-m": "Prints the machine hardware name.",
+            "-p": "Prints the processor type (non-portable).",
+            "-i": "Prints the hardware platform (non-portable).",
+            "-o": "Prints the operating system.",
+            "--version": "Displays version info of uname and exits."
+        }
+    },
+    "lscpu": {
+        "description": "Prints detailed CPU information."
+    },
+    "lshw": {
+        "description": "Shows detailed hardware information. Run as sudo for complete info."
+    },
+    "lsb_release": {
+        "description": "Prints distribution-specific information (LSB == Linux Standard Base).",
+        "options": {
+            "-v": "Shows the version of the LSB.",
+            "-i": "Displays the distributor's ID.",
+            "-d": "Displays a description of the installed distribution.",
+            "-r": "Displays the release number of the installed distribution.",
+            "-c": "Displays the code name of the installed distribution.",
+            "-a": "Displays all of the above information.",
+            "-s": "Uses a short output format.",
+            "-h": "Shows summary of options."
+        }
+    },
+    "fdisk": {
+        "description": "Displays disk information for the local host."
+    },
+    "df": {
+        "description": "Displays disk space usage."
+    },
+    "fsck": {
+        "description": "Checks and repairs a Linux filesystem."
+    },
+    "dkms": {
+        "description": "Dynamic Kernel Module Support.",
+        "syntax": "dkms <action> <options> <module/module-version> <path/to/source-tree> <path/to/tarball.tar> <path/to/driver.rpm>.",
+        "options": {
+            "add": "Adds the module to the tree for builds and installs.",
+            "remove": "Removes the module from the tree.",
+            "build": "Builds the module for the specified kernel/arch.",
+            "install": "Installs a built module onto the kernel.",
+            "uninstall": "Uninstalls a module from the kernel/arch.",
+            "status": "Returns the current status of modules and kernels.",
+            "autoinstall": "Attempts to install the latest revision of modules."
+        }
+    },
+    "!$": {
+        "description": "Repeats the last argument or command."
+    },
+    "clear": {
+        "description": "Clears the terminal screen."
+    },
+    "ls": {
+        "description": "Lists objects in a directory.",
+        "options": {
+            "-l": "Long form list.",
+            "*<string>*": "Lists contents that contain what's between the '* *'."
+        }
+    },
+    "cd": {
+        "description": "Changes directory (enter the directory)."
+    },
+    "cd ..": {
+        "description": "Moves up to the parent directory (\"back out\" of the current directory)."
+    },
+    "touch": {
+        "description": "Creates a new file."
+    },
+    "mkdir": {
+        "description": "Creates a new directory."
+    },
+    "rm": {
+        "description": "Removes a file.",
+        "options": {
+            "-r": "Recursive removal.",
+            "-f": "Forces removal without warnings.",
+            "-r -f": "Removes directories and their contents, use with caution."
+        }
+    },
+    "rmdir": {
+        "description": "Removes an empty directory."
+    },
+    "cat": {
+        "description": "Concatenates and displays the contents of a file."
+    },
+    "mv": {
+        "description": "Moves or renames a file.",
+        "syntax": "$ mv [file to move] [destination]/",
+        "example": "$ mv newfile Desktop/\nRenaming example: $ mv newfile NewFile"
+    },
+    "cp": {
+        "description": "Copies a file.",
+        "syntax": "$ cp [file to copy] [new file name]"
+    },
+    "ln": {
+        "description": "Creates links.",
+        "options": {
+            "Hard linking": "Duplicates the file. Changes reflect in both files.",
+            "Symbolic linking": "Creates a shortcut or reference."
+        },
+        "syntax": "ln <source> <destination> or ln -s <source> <destination>"
+    },
+    "man [command]": {
+        "description": "Displays the manual for a command.",
+        "example": "$ man ls"
+    },
+    "nano [file]": {
+        "description": "Text editor in the terminal."
+    },
+    "vi or vim [file]": {
+        "description": "More complex text editor than nano, with advanced features."
+    },
+    "emacs": {
+        "description": "A text editor currently in use."
+    },
+    "evince [file]": {
+        "description": "Opens the Document Viewer app for the specified file."
+    },
+    "zip": {
+        "description": "Compresses a file into a .zip format.",
+        "options": {
+            "unzip": "Extracts files from a .zip archive."
+        }
+    },
+    "gzip": {
+        "description": "Compresses a file into a .gz format.",
+        "options": {
+            "gzip": "Creates a .gz compressed file.",
+            "gunzip": "Extracts a .gz file.",
+            "zcat": "Outputs a .gz file content."
+        }
+    },
+    "telnet": {
+        "description": "Allows remote access via Telnet. Insecure as data is sent in clear text.",
+        "syntax": "telnet <ip> <port>"
+    },
+    "ssh [user@address]": {
+        "description": "Secure remote access using SSH. Encrypted and authenticated.",
+        "syntax": "ssh <flags> <username@address>"
+    },
+    "john [options]": {
+        "description": "John the Ripper: A password cracker that checks for weak passwords."
+    },
+    "cron": {
+        "description": "Starts on system boot and automates tasks."
+    },
+    "crontabs": {
+        "description": "Method to interact with cron.",
+        "syntax": "crontab -e",
+        "example": "Requires 6 values: MIN, HOUR, DOM, MON, DOW, CMD."
+    },
+    "> or >>": {
+        "description": "Output Redirection: [program or command] > (create/overwrite file) or >> (append to a file) [filename].",
+        "example": "$ echo \"a new world\" >> helloworld adds \"a new world\" to the end of the \"helloworld\" file."
+    },
+    "<": {
+        "description": "Input Redirection. Redirects input from a file or stream."
+    },
+    "<<": {
+        "description": "Here document: Embed input for stdin inside a script.",
+        "example": "sort <<END\npineapple\nbanana\nspider\ncar\ntoaster\nEND"
+    },
+    "0>, 1>, 2>": {
+        "description": "Redirects stdin (0), stdout (1), or stderr (2) to a file.",
+        "example": "<command> > stdout-here 2> stderr-here < stdin-from-here."
+    },
+    "(&> or &>>):": {
+        "description": "Redirects both stdout and stderr into the specified file."
+    },
+    "|": {
+        "description": "Pipe character: Directs the output from one process as input into another.",
+        "example": "<command1> | <command2>."
+    },
+    "&&": {
+        "description": "Boolean 'AND' symbol: Runs the next command only if the first command succeeds.",
+        "example": "$ [file] && echo 'it worked'"
+    },
+    ";": {
+        "description": "Executes multiple commands sequentially, regardless of success."
+    },
+    "&": {
+        "description": "Runs a command in the background, allowing other commands to be executed simultaneously."
+    },
+    "Arithmetic Operators": {
+        "description": "Used with (()) or let.",
+        "options": {
+            "id++": "Increment by 1.",
+            "id--": "Decrement by 1.",
+            "++id": "Pre-increment.",
+            "--id": "Pre-decrement.",
+            "!": "Not operator.",
+            "**": "Exponentiation.",
+            "*": "Multiplication.",
+            "/": "Division.",
+            "%": "Modulo (remainder).",
+            "+": "Addition.",
+            "-": "Subtraction.",
+            "<<": "Left bitwise shift.",
+            ">>": "Right bitwise shift.",
+            "<= >=": "Comparison (less/greater or equal).",
+            "< >": "Comparison (less/greater than).",
+            "== !=": "Equality and non-equality.",
+            "&": "Bitwise AND.",
+            "^": "Bitwise XOR.",
+            "|": "Bitwise OR.",
+            "&&": "Logical AND.",
+            "||": "Logical OR.",
+            "expr?expr:expr": "Conditional operator (ternary)."
+        }
+    },
+    "sudo": {
+        "description": "Superuser command: 'super user do.' Requires specific user permissions.",
+        "example": "$ sudo apt-get update"
+    },
+    "su": {
+        "description": "Switch user.",
+        "example": "$ su - [username] to switch users. To switch to root: $ su -"
+    },
+    "apt-get update": {
+        "description": "Searches for updates for programs on the system."
+    },
+    "apt-get upgrade": {
+        "description": "Upgrades the software found by apt-get update."
+    },
+    "apt-get install": {
+        "description": "Installs the specified program."
+    },
+    "apt-get remove": {
+        "description": "Uninstalls the specified program."
+    },
+    "apt-cache search": {
+        "description": "Searches for programs available for installation."
+    },
+    "chown": {
+        "description": "Changes user and group ownership of a file.",
+        "syntax": "chown <user>:<group> <file>"
+    },
+    "adduser": {
+        "description": "Adds a new user to the system.",
+        "syntax": "adduser <username>"
+    },
+    "useradd": {
+        "description": "Low-level way to add a user (prefer adduser).",
+        "example": "useradd -m -d /home/testuser -u 1501 -g 66 -s /bin/bash testuser"
+    },
+    "addgroup": {
+        "description": "Adds a new group.",
+        "syntax": "addgroup <groupname>"
+    },
+    "usermod": {
+        "description": "Adds a user to a group.",
+        "syntax": "usermod -a -G <groups> <user>"
+    },
+    "chmod": {
+        "description": "Changes file permissions. Uses octal (binary) notation:",
+        "options": {
+            "7 (111)": "rwx",
+            "6 (110)": "rw-",
+            "5 (101)": "r-x"
+        },
+        "example": "$ chmod 640 [file]"
+    },
+    "userdel": {
+        "description": "Deletes a user."
+    },
+    "hd <file>": {
+        "description": "Hexdump: Shows the hexadecimal content of the specified file."
+    },
+    "cut": {
+        "description": "Extracts specific parts of a file.",
+        "example": "cut -d':' -f1 /etc/passwd"
+    },
+    "sort": {
+        "description": "Sorts the contents of a file alphabetically."
+    },
+    "uniq": {
+        "description": "Filters out repeated lines.",
+        "example": "uniq <file>"
+    },
+    "seq": {
+        "description": "Generates a sequence of numbers or letters.",
+        "example": "seq 1 5 outputs 1, 2, 3, 4, 5"
+    },
+    "wc": {
+        "description": "Word count: Prints newline, word, and byte counts for each file.",
+        "syntax": "wc <filename>"
+    },
+    "echo": {
+        "description": "Prints a string to the terminal or file.",
+        "example": "$ echo 'hello' > file.txt creates file.txt with 'hello'"
+    },
+    "grep": {
+        "description": "Search tool: Filters output based on a pattern.",
+        "syntax": "grep <pattern> <file>"
+    },
+    "ps": {
+        "description": "Displays a snapshot of user-created processes.",
+        "options": {
+            "-ef": "Shows all system processes."
+        }
+    },
+    "kill": {
+        "description": "Terminates a process using its Process ID (PID).",
+        "syntax": "kill <PID>"
+    },
+    "systemctl": {
+        "description": "Controls the state of systemd services.",
+        "options": {
+            "-stop": "Stops a unit.",
+            "-start": "Starts a unit.",
+            "-restart": "Restarts a unit."
+        }
+    },
+    "/etc/init.d/<service>": {
+        "description": "Stops a running service."
+    },
+    "top": {
+        "description": "Shows processes consuming the most resources."
+    },
+    "initctl list": {
+        "description": "Lists upstart jobs and their status."
+    },
+    "w": {
+        "description": "Shows who is logged on and what they are doing."
+    },
+    "whoami": {
+        "description": "Displays the current user."
+    },
+    "id": {
+        "description": "Displays detailed user information, including groups."
+    },
+    "cat /etc/passwd": {
+        "description": "Lists all users on the system.",
+        "example": "Includes username, UID, GID, home directory, and login shell."
+    },
+    "which <command>": {
+        "description": "Locates a command within the $PATH directories."
+    },
+    "find [file]": {
+        "description": "Finds files based on criteria.",
+        "example": "Recursive search: find /. Example: find <dir> -user <user>."
+    },
+    "whereis [file]": {
+        "description": "Prints the location of a file or directory."
+    },
+    "locate [file]": {
+        "description": "Finds files by name using an index (updatedb)."
+    },
+    "cut, copy, paste": {
+        "description": "Shortcuts: ctrl+shift+(x, c, v)."
+    },
+    "ctrl+c": {
+        "description": "Interrupts a running process (prints '^C')."
+    },
+    "ctrl+d": {
+        "description": "Ends a running process and creates a newline."
+    },
+    "ctrl+l": {
+        "description": "Clears the terminal screen."
+    },
+    "export": {
+        "description": "Redefines the value of a variable.",
+        "example": "$ export nootnoot=1111"
+    },
+    "$*": {
+        "description": "Denotes environment variables. Changes affect system processes."
+    },
+    "export -f": {
+        "description": "Exports functions globally."
+    },
+    "typeset": {
+        "description": "Declares local variables.",
+        "options": {
+            "-i": "Declares an integer variable."
+        }
+    },
+    "let": {
+        "description": "Performs arithmetic operations.",
+        "example": "let x++, x=x*3"
+    },
+    "declare": {
+        "description": "Declares variables.",
+        "options": {
+            "-l": "Converts values to lowercase.",
+            "-u": "Converts values to uppercase.",
+            "-r": "Makes the variable read-only."
+        }
+    },
+    "read": {
+        "description": "Reads input into variables.",
+        "example": "read a b"
+    },
+    "exec": {
+        "description": "Executes a command, stopping the current shell process."
+    },
+    "while loop": {
+        "description": "Repeats while a condition is true.",
+        "syntax": "while [condition]\ndo\n  commands\ndone."
+    },
+    "for loop": {
+        "description": "Iterates over a list of values.",
+        "syntax": "for var in list\ndo\n  commands\ndone."
+    },
+    "case statement": {
+        "description": "Substitutes for if/then/elif/else statements.",
+        "syntax": "case <value> in\n  pattern1) commands ;;\n  pattern2) commands ;;\nesac."
+    },
+    "if-then-else": {
+        "description": "Conditional branching.",
+        "syntax": "if [condition]\nthen\n  commands\nelse\n  commands\nfi."
+    },
+    "test": {
+        "description": "Evaluates conditions.",
+        "example": "test -f file"
+    },
+    "function": {
+        "description": "Defines a function.",
+        "syntax": "function name { commands }."
+    },
+    "return": {
+        "description": "Exits a function without executing further commands."
+    },
+    "exit": {
+        "description": "Exits the shell script.",
+        "syntax": "exit <value>"
+    }
+}

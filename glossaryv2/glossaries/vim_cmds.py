@@ -328,7 +328,7 @@ glossary = {
 
     '<lt>':                   'Represents less-than symbol (<) (decimal value 60).',
 
-    '<Bslash>':               'Represents backslash (\) (decimal value 92).',
+    '<Bslash>':               'Represents backslash (\\) (decimal value 92).',
 
     '<Bar>':                  'Represents vertical bar (|) (decimal value 124).',
 

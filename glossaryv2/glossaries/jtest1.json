@@ -1,8 +1,0 @@
-{
-    "Term1":    "Def1",
-    "Term2":    {
-        "Def2": "SubDef1",
-        "Def3": "SubDef2"
-        } 
-}
-
